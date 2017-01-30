@@ -38,7 +38,7 @@ class KarenForm extends React.Component {
   }
 
   handleReset() {
-    this.setState({resume: '', cover: ''})
+    this.setState({resume: '', cover: '', hasSubmitted: false})
   }
 
   handleSubmit(e) {
@@ -46,6 +46,7 @@ class KarenForm extends React.Component {
     const {minWords} = this.props
     e.preventDefault();
 
+    this.setState({personality: null})
     if (! hasSubmitted) {
       this.setState({hasSubmitted: true})
     }
