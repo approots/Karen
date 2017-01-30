@@ -1,0 +1,33 @@
+{
+  "name": "karen",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "enzyme": "^2.7.1",
+    "react-addons-test-utils": "^15.4.2",
+    "react-scripts": "0.8.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "jss": "^6.2.0",
+    "jss-vendor-prefixer": "^4.0.0",
+    "material-ui": "^0.16.0-rc2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-jss": "^5.2.0",
+    "react-tap-event-plugin": "^2.0.1",
+    "recharts": "^0.20.5",
+    "request": "^2.79.0",
+    "velocity-react": "^1.2.1",
+    "watson-developer-cloud": "^2.15.5"
+  },
+  "scripts": {
+    "server": "node server.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "//": "proxy: Proxy api requests to the port that express is running on.",
+  "proxy": "http://localhost:3001/"
+}
