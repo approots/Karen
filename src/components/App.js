@@ -18,7 +18,7 @@ const styles = {
 const App = ({sheet}) => {
   return (
     <div className={sheet.classes.containers}>
-      <Greeting color={greetingColor}>Applicant Score</Greeting>
+      <Greeting color={greetingColor}>Applicant Personality</Greeting>
       <KarenForm color={greetingColor} minWords={200} />
     </div>
   )
