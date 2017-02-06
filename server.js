@@ -1,5 +1,5 @@
 const express = require('express')
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser')
 const personalityInsights = require('./server/watson')
 const app = express()
 const port = 3001
@@ -14,7 +14,7 @@ app.get('/*', (req, res) => {
 
 // Post to Watson.
 app.post('/api', (req, res) => {
-  console.log('posted to server');
+  console.log('posted to server')
   const text = req.body.resume + ' ' + req.body.cover
   // const response = {
   //   personality: [
@@ -30,19 +30,23 @@ app.post('/api', (req, res) => {
   // }
   // res.send(JSON.stringify(response, null, 2))
 
-  personalityInsights.profile({
-      text: text,
-      consumption_preferences: false
-    },
-    (err, response) => {
-      if (err) {
-        console.log('error:', err)
-        res.status(500).send(err)
-      } else {
-        console.log("success")
-        res.send(JSON.stringify(response, null, 2))
-      }
-    });
+  const insights = (text) => {
+    return new Promise((resolve, reject) => {
+      personalityInsights.profile({text: text, consumption_preferences: false}, (err, res) => {
+        (err)
+          ? reject(err)
+          : resolve(res)
+      })
+    })
+  }
+
+  insights(text)
+    .then((data) => {
+      res.send(JSON.stringify(data, null, 2))
+    })
+    .catch((err) => {
+      res.status(500).send(err)
+    })
 })
 
 // Start the server
