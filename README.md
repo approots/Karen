@@ -1,8 +1,8 @@
-#Karen Candidate Application
+# Karen Candidate Application
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-##Installation
+## Installation
 
 ```sh
 git clone https://github.com/approots/Karen.git
